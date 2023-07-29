@@ -2,16 +2,22 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press ⌥⏎ with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Lottery lottery = new Lottery();
 
-        // Press ⌃R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Добавление игрушек
+        lottery.addToy(new Toy(1, "Doll", 10, 20));
+        lottery.addToy(new Toy(2, "Car", 5, 30));
+        lottery.addToy(new Toy(3, "Puzzle", 8, 15));
 
-            // Press ⌃D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing ⌘F8.
-            System.out.println("i = " + i);
-        }
+        // Изменение веса игрушки
+        lottery.updateToyWeight(3, 60);
+
+        // Запуск розыгрыша
+        lottery.startLottery();
+
+        // Получение призовой игрушки
+        lottery.getPrizeToy();
+
+        lottery.toString();
     }
 }
